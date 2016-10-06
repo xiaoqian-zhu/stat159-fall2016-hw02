@@ -20,12 +20,9 @@ We consider one media from the data set, *TV*, and the study its relationship wi
 ## Results
 Running regression through R, we can compute get the estimated coefficients. The regression coefficients is given in the table below:
 
-```{r, results= 'asis', echo=False}
+```{r, results = 'asis', echo=FALSE}
 load('../data/regression.RData')
-options(repos="https://cran.rstudio.com" )
-install.packages("xtable")
 library("xtable")
-
 table1 <- xtable(regression_sum,
               caption = 'Information about Regression Coefficents',
               digits = 2)
@@ -60,8 +57,6 @@ I include a picture of the scatterplot of the analysis with fitted regression li
 
 ```{r, fig.width = 100, fig.height = 4,echo=FALSE, fig.cap= 'Scatterplot with Fitted Regression Line', message = FALSE}
 library(grid)
-options(repos="https://cran.rstudio.com" )
-install.packages("png")
 library(png)
 require(png)
 require(grid)
