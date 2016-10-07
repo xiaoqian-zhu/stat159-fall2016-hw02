@@ -9,9 +9,9 @@ This homework assignment is to start applying the computational toolkit (plus R)
 
 The analysis involves carrying out a simple linear regression of TV advertising on Sales of a particular product. The overall idea is to write a report that recaplicate the results, including:
 
-	-Figure 3.1 (page 62) Scatterplot with fitted regression line.
-	-Table 3.1 (page 68) Summary of regression coefficients.
-	-Table 3.2 (page 69) Quality indices *RSE*, *R^2*, and *F-statistic*.
+- Figure 3.1 (page 62) Scatterplot with fitted regression line.  
+- Table 3.1 (page 68) Summary of regression coefficients.  
+- Table 3.2 (page 69) Quality indices *RSE*, *R^2*, and *F-statistic*.  
 
 
 
