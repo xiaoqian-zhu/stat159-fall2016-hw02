@@ -23,13 +23,11 @@ Running regression through R, we can compute get the estimated coefficients. The
 ```{r, results = 'asis', echo=FALSE}
 load('../data/regression.RData')
 library("xtable")
-table1 <- xtable(regression_sum,
-              caption = 'Information about Regression Coefficents',
-              digits = 2)
+table1 <- xtable(regression_sum,caption = 'Information about Regression Coefficents',digits = 2)
+
 row.names(table1) <- c('(Intercept)','TV')
 
-print(table1, caption.placement = 'top',
-      comment = getOption("xtable.comment", FALSE))
+print(table1, caption.placement = 'top',comment = getOption("xtable.comment", FALSE))
 ```
 
 In table 1, we can see the estimated coefficients $\hat{\beta_0}$ and $\hat{\beta_1}$. The interception $\hat{\beta_0}$ is equal to 7.03 and the coefficient on TV $\hat{\beta_1}$ is 0.05, which means that for every additional $1000 spent on TV adverstiing is associated to 50 additional units of the specific product sold. Morevoer, the t stat of both estimated coefficients are both very high, and the p value are both equal to 0. Thus, both estimated coefficients are statisitcally significant at the 1% level, and we can confidentally reject the null hypothesis. To be noticed, the correlation does not necessarily equal to causation. So we need more inforamtion about the regression analysis to see how much this linear model explain the relationship. 
@@ -40,15 +38,13 @@ More information about the least squares model from the regression analysis is g
 load('../data/regression.RData')
 library(xtable)
 Quantity <- c('RSS', 'R2', 'F-stat')
-Value <- c(regression_sum$sigma,
-           regression_sum$adj.r.squared,
-           regression_sum$fstatistic[1])
-results2 <- data.frame(Quantity, Value)
-table2 <- xtable(results2,
-               caption = 'Regression Quality Indices')
+Value <- c(regression_sum$sigma, regression_sum$adj.r.squared, regression_sum$fstatistic[1])
 
-print(table2, caption.placement = 'top',
-      comment = getOption("xtable.comment", FALSE))
+results2 <- data.frame(Quantity, Value)
+
+table2 <- xtable(results2, caption = 'Regression Quality Indices')
+
+print(table2, caption.placement = 'top', comment = getOption("xtable.comment", FALSE))
 ```
 
 RSS is residual sum of squares and it measures the deviation from true regression. In table 2,  RSS is 3.26, that the actual amount of sales will deviate from the true regression by an average of 3260 units. $R^{2}$ tells us how much of the dependent variable can be explained by the independent variable. In table 2, $R^{2} = 0.61$, that 61% of variability in sales can be explained by TV advertising budget. F-statistic also describes the statistically difference. In table 2, F-stat is equal to 312.14, which is very hight that we can confidently reject null hypothesis. F-statistic supports the same conclusion from the t-test in table 1. Thus, TV advertising budget and sales have a positive relationship. 
